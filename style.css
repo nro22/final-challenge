@@ -1,0 +1,144 @@
+/* Challenge
+
+   Make the navigation layout work
+   on both mobile and large screens.
+
+   Mobile-first, so mobile styles first,
+   then add the large screen styles
+   inside the existing media query
+
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+p {
+    width: clamp(45ch, 50%, 75ch);
+  }
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Oswald", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body > *{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+header{
+    background-color: #2E323F;
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.logo{
+    margin-right: auto;
+}
+.wrapper{
+    display: contents;
+}
+.nav__list{
+    display: flex;
+}
+li{
+    list-style: none;
+}
+.nav__link{
+    text-decoration: none;
+    color: white;
+}
+.top, footer{
+    background-color: #3B4050;
+}
+.top{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: start;
+}
+.principles{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: min-width;
+}
+.principle{
+    display: flex;
+    flex-direction: column;
+}
+/*Kevin powell code*/
+.container{
+    position: relative;
+}
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: #072A2D;
+    color: #ffffff;
+    transition: opacity 250ms ease;
+    position: absolute;
+    left: 0;
+}
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: white;
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+.hamburger::before {
+    transform: translateY(-6px);
+}
+.hamburger::after {
+    transform: translateY(3px);
+}
+.nav {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+}
+.nav--visible {
+    visibility: visible;
+    height: auto;
+    position: relative;
+    width: 100%;
+} 
+.logo {
+    height: 30px;
+}
+.principles{
+    background-color: #d3d3d3;
+}
+
+@media (min-width: 700px){
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav {
+        visibility: visible;
+        display: flex;
+        height: auto;
+        justify-content: flex-end;
+    }
+}
+@media (min-width: 1100px){
+
+}
