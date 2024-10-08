@@ -53,8 +53,7 @@ li{
 }
 .top{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    justify-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(410px,1fr));
 }
 .principles{
     display: flex;
@@ -67,6 +66,15 @@ li{
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+.footer-bottom{
+    display: grid;
+    grid-template-columns: repeat(auto-fit(640px,1fr));
+}
+.footer-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 /*Kevin powell code*/
 .container{
