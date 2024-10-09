@@ -12,9 +12,18 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-p {
-    width: clamp(45ch, 50%, 75ch);
-  }
+ul{
+    padding-left: 0;
+}
+/* {
+    white-space: pre-wrap;
+} */
+/* p {
+    width: clamp(45ch, 50%, min(75ch,100%));
+} */
+p,ul{
+    margin: 0;
+}
 body {
     margin: 0;
     display: flex;
@@ -30,6 +39,7 @@ header{
     justify-content: end;
     align-items: center;
     font-size: 18px;
+    background-color: #2E323F;
 }
 .logo{
     margin-right: auto;
@@ -103,6 +113,11 @@ h1 span{
     font-size: 21px;
     color: #2E323F
 }
+img {
+    max-width: 100%;  /* Ensures the image does not exceed the width of its container */
+    height: auto;     /* Maintains the aspect ratio of the image */
+    display: block;   /* Prevents extra space below the image */
+}
 .step{
     background-color: #3B4050;
 }
@@ -117,7 +132,8 @@ footer h1{
 }
 .footer-bottom{
     display: grid;
-    grid-template-columns: repeat(auto-fit(640px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px,1fr));
+    row-gap: 2em;
 }
 .about h4, .footer-nav-list p{
     font-size: 21px;
@@ -130,8 +146,16 @@ footer h1{
 }
 .footer-nav{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    row-gap: 1em;
+    column-gap: 3em;
+}
+.footer-nav-list{
+    text-align: center;
+}
+.footer-list-items{
+    margin-top: auto;
 }
 button{
     background-color: #A59678;
