@@ -26,8 +26,6 @@ body > *{
     padding-right: 5%;
 }
 header{
-    background-color: #2E323F;
-    height: 100px;
     display: flex;
     justify-content: end;
     align-items: center;
