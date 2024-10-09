@@ -18,11 +18,18 @@ ul{
 /* {
     white-space: pre-wrap;
 } */
-/* p {
-    width: clamp(45ch, 50%, min(75ch,100%));
-} */
-p,ul{
+p {
+    width: clamp(min(45ch,100%), 50%, 75ch);
+}
+p,ul, h4{
     margin: 0;
+}
+button{
+    background-color: #A59678;
+    border-radius: 50px;
+    box-shadow: none;
+    border: none;
+    padding: .5rem 2.5rem;
 }
 body {
     margin: 0;
@@ -62,11 +69,15 @@ li{
 }
 .top{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(410px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(410px,100%), 1fr));
 }
 .top h1{
     font-size: 90px;
     color: #A59678;
+}
+.area{
+    align-self: self-end;
+    margin-bottom: 3.75rem;
 }
 .area p{
     font-family: 'Montserrat',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -78,6 +89,8 @@ li{
     font-size: 24px;
     font-weight: 700;
     font-family: 'Oswald', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 8px;
+    margin-top: 2rem;
 }
 h1 span{
     color: #ffffff
@@ -85,7 +98,9 @@ h1 span{
 .principles{
     display: flex;
     flex-wrap: wrap;
+    column-gap: 2rem;
     background-color: #d3d3d3;
+    padding-bottom: 3rem;
 }
 .principle{
     flex-basis: 400px;
@@ -126,14 +141,30 @@ img {
     font-family: 'Monteserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #d3d3d3;
 }
+footer{
+    padding-bottom: 4rem;
+}
 footer h1{
     font-size: 50px;
     color: #fff;
+    text-align: center;
 }
 .footer-bottom{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(450px,100%), 1fr));
     row-gap: 2em;
+}
+.footer-list-items, .about p{
+    padding-top: .75rem;
+}
+/* .about, .about p{
+    text-align: center;
+} */
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .about h4, .footer-nav-list p{
     font-size: 21px;
@@ -156,10 +187,4 @@ footer h1{
 }
 .footer-list-items{
     margin-top: auto;
-}
-button{
-    background-color: #A59678;
-    border-radius: 5px;
-    box-shadow: none;
-    border: none;
 }
